@@ -1,0 +1,185 @@
+:root {
+    --primary: #ff4a4a;
+    --secondary: #00ff66;
+    --dark: #09090d;
+    --panel: #14141f;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-wrapper {
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 74, 74, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hp-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+    letter-spacing: 1px;
+}
+
+.bar-bg {
+    width: 200px;
+    height: 14px;
+    background: #333;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+#hp-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0055, var(--primary));
+    transition: width 0.1s ease;
+}
+
+#storm-timer {
+    background: rgba(255, 74, 74, 0.25);
+    border: 2px solid var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.score-container {
+    font-weight: bold; 
+    color: var(--secondary);
+    letter-spacing: 1px;
+}
+
+#battleCanvas {
+    background: #111116;
+    display: block;
+}
+
+/* POPUP DE LA CAJA DE SUMINISTROS */
+#loot-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--panel);
+    border: 3px solid var(--secondary);
+    border-radius: 12px;
+    padding: 25px;
+    width: 450px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0, 255, 102, 0.4);
+    z-index: 10;
+    display: none;
+}
+
+#loot-modal h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+#question-text {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn-action {
+    padding: 12px 25px;
+    margin: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: transform 0.1s;
+}
+
+.btn-true { background: var(--secondary); color: #000; }
+.btn-false { background: var(--primary); color: #fff; }
+.btn-action:hover { transform: scale(1.05); }
+
+/* PANTALLAS DE ESTADO */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 12;
+}
+
+.screen h1 {
+    color: var(--primary);
+    letter-spacing: 3px;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.screen p {
+    color: #888;
+    max-width: 500px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-start {
+    background: transparent;
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.btn-start:hover {
+    background: var(--secondary);
+    color: #000;
+    box-shadow: 0 0 15px var(--secondary);
+}
+
+.hidden { display: none !important; }
